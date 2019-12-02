@@ -6,12 +6,12 @@ class DrawingPanel extends JPanel {
 
 }
 public class Web extends JFrame {
-    private String textToShow; // this is what the text area will show
-    private JTextArea txaWords;  // known throughout the class
+    private String textToShow; 
+    private JTextArea txaWords;  
     public void setupUI() {
         textToShow = "";
         setTitle("Web Scraper");
-        setBounds(100,100,500,500);
+        setBounds(200,200,700,700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container c = getContentPane();
         c.setLayout(new BorderLayout());
@@ -20,14 +20,12 @@ public class Web extends JFrame {
         JLabel label = new JLabel("Enter URL:");
         JTextField txtTextToAdd = new JTextField(20); 
         JButton btnAddText = new JButton("Fetch");
-        JButton btnSouthw = new JButton("Save as text");
-        c.add(btnSouthw,BorderLayout.SOUTH);
-        JButton btnSouthe = new JButton("Save as JSON");
-        c.add(btnSouthe,BorderLayout.SOUTH);
-        /* the JButton when clicked will take the text in the text field and
-         * add it to textToShow. Then it will to the text area to set its 
-         * text to it.
-         */
+        JButton btnSText = new JButton("Save as text");
+        JButton btnSJson = new JButton("Save as JSON");
+        JPanel panButtons = new JPanel();
+        panButtons.add(btnSText);
+        panButtons.add(btnSJson);
+        c.add(panButtons,BorderLayout.SOUTH);
         btnAddText.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = txtTextToAdd.getText();
