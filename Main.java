@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author
+ * @author Everyone
  */
 public class Main {
 
