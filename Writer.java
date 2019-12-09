@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author
+ * @author John Vercimak
  */
 public class Writer {
 
