@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author
+ * @author John Vercimak
  */
 public class GrabData {
 
