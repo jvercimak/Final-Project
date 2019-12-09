@@ -46,7 +46,7 @@ public class Writer {
                 ll.add(s);
             }
         }
-        Model m = new Model("Antonio", " hw9_final_project");
+        Model m = new Model("Group", " Final");
         m.parse(ll);
         try {
             FileWriter fw = new FileWriter(file);
