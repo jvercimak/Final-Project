@@ -1,3 +1,12 @@
+/**
+ * The GUI class is responsible for setting up
+ * the user-friendly interface.
+ * 
+ * @author Monique Cauty
+ * @author Antonio Elhakim
+ * @author Dan Laskero
+ * @author John Vercimak
+ */
 
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
@@ -43,10 +52,15 @@ public class GUI extends JFrame {
         setVisible(true);
     }
 
+    /******************************************************************/
+    /**
+     * buttonBar() is responsible for setting up the save
+     * buttons/options for the user
+     */
     private void buttonBar() {
         JPanel jp = new JPanel();
-        JButton toText = new JButton("Save to text");
-        JButton toJson = new JButton("Save to json");
+        JButton toText = new JButton("Save to Text");
+        JButton toJson = new JButton("Save to Json");
         jp.add(toText);
         jp.add(toJson);
         add(jp, BorderLayout.SOUTH);
@@ -79,6 +93,10 @@ public class GUI extends JFrame {
 
     }
 
+    /******************************************************************/
+    /**
+     * urlBar() is responsible for setting up the URL address bar
+     */
     private void urlBar() {
         JPanel top = new JPanel();
         top.add(new JLabel("Enter URL"));
@@ -94,12 +112,16 @@ public class GUI extends JFrame {
         });
     }
 
+    /******************************************************************/
+    /**
+     * menuBar() sets up menu options such as "File", "Exit, "Help", etc.
+     */
     private void menuBar() {
         //Where the GUI is created:
         JMenuBar menuBar;
         JMenu menu;
         JMenuItem menuItem;
-
+        String aboutapp = "Homework 9:\n\nMonique Cauty\nAntonio Elhakim\nDan Laskero\nJohn Vercimak";
         menuBar = new JMenuBar();
         menu = new JMenu("File");
         menuBar.add(menu);
@@ -114,7 +136,7 @@ public class GUI extends JFrame {
         menuBar.add(menu);
         menuItem = new JMenuItem("About");
         menuItem.addActionListener((ActionEvent e) -> {
-            JOptionPane.showMessageDialog(null, "Homework 9");
+            JOptionPane.showMessageDialog(null, aboutapp);
         });
         menu.add(menuItem);
 

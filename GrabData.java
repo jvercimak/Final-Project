@@ -1,3 +1,12 @@
+/**
+ * The GrabData class is responsible for "grabbing" data
+ * from the webpage, adding data to an ArrayList.
+ * 
+ * @author Monique Cauty
+ * @author Antonio Elhakim
+ * @author Dan Laskero
+ * @author John Vercimak
+ */
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,35 +17,36 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author John Vercimak
- */
 public class GrabData {
 
-    /**
-     * 2.The java class or classes that grab the data from the website, create
-     * objects from it, and store them in an ArrayList. (5 points)
-     *
-     * @param url
-     * @return
-     */
-    public static ArrayList<String> grab(String url) {
-        ArrayList<String> ll = new ArrayList<>();
+	/*******************************************************************************/
+	/**
+	 * grab() grabs the data from the webpage and adds
+	 * to an ArrayList.
+	 * 
+	 * @param url for the webpage
+	 * @return linked list of data
+	 */
+	public static ArrayList<String> grab(String url) {
+		ArrayList<String> ll = new ArrayList<>();
 
-        try {
-            URL oracle = new URL(url);
+		try {
+			URL oracle = new URL(url);
 
-            Scanner scanner = new Scanner(oracle.openStream());
-
-            while (scanner.hasNext()) {
-                ll.add(scanner.nextLine());
-            }
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(GrabData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(GrabData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return ll;
-    }
+			Scanner scanner = new Scanner(oracle.openStream());
+			
+			// add data to ArrayList here
+			while (scanner.hasNext()) {
+				ll.add(scanner.nextLine());
+			}
+			
+		// catch the uglies
+		} catch (MalformedURLException ex) {
+			Logger.getLogger(GrabData.class.getName()).log(Level.SEVERE, null, ex);
+		} catch (IOException ex) {
+			Logger.getLogger(GrabData.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return ll;
+	}
+	/*******************************************************************************/
 }
